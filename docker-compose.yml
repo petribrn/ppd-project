@@ -1,0 +1,24 @@
+version: '3.9'
+
+services:
+   text-processor:
+    container_name: text-processor
+    image: python-text-processor
+    networks:
+      - ppd-project
+    expose:
+      - "1201"
+    volumes:
+      - ./orchestrator/script:/script
+   text-counter:
+    container_name: text-counter
+    image: python-text-processor
+    networks:
+      - ppd-project
+    volumes:
+      - ./counters/script:/script
+
+networks:
+  ppd-project:
+    name: ppd-project
+    driver: bridge
