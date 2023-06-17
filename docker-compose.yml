@@ -8,15 +8,23 @@ services:
       - ppd-project
     expose:
       - "1201"
+    environment:
+      - COUNTER_NUMBER=$COUNTER_NUMBER
     volumes:
       - ./orchestrator/script:/script
-   text-counter:
-    container_name: text-counter
-    image: python-text-processor
+   word-counter:
+    image: python-word-counter
     networks:
       - ppd-project
     volumes:
       - ./counters/script:/script
+    expose:
+      - "1202"
+    deploy:
+      mode: replicated
+      replicas: $COUNTER_NUMBER
+    depends_on:
+      - text-processor
 
 networks:
   ppd-project:
