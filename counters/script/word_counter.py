@@ -19,7 +19,7 @@ def init_counter_instance():
 
     # Counts number of words
     count = count_words(content_received)
-    print(f'{Back.YELLOW}{Fore.BLACK}Contagem de palavras: {Back.WHITE}{count}{Style.RESET_ALL}')
+    print(f'{Back.YELLOW}{Fore.BLACK}Count: {Back.WHITE}{count}{Style.RESET_ALL}')
 
     # Sends back the count to the main container (fragmenter) and close socket
     socket_instance.send(str(count).encode())

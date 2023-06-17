@@ -2,12 +2,12 @@
 
 pushd counters/docker
 
-docker build --no-cache -t python-text-processor .
+docker build --no-cache -t python-word-counter .
 
 popd
 
 pushd text-processor/docker
 
-docker build --no-cache -t python-word-counter .
+docker build --no-cache -t python-text-processor .
 
 popd
