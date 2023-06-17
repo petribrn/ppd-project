@@ -11,7 +11,7 @@ services:
     environment:
       - COUNTER_NUMBER=$COUNTER_NUMBER
     volumes:
-      - ./orchestrator/script:/script
+      - ./text-processor/script:/script
    word-counter:
     image: python-word-counter
     networks:
