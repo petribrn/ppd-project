@@ -23,7 +23,7 @@ Para gerar as imagens dos dois serviços Docker, rode no diretório raiz do proj
 ./build.sh
 ```
 
-Para reiniciar os containers e rodar os programas rode:
+Para reiniciar os containers e executar o código dos programas rode:
 
 ```
 ./start.sh
