@@ -47,7 +47,11 @@ def init_orchestrator():
     # Defines file content fragments for each child container
     increment_value = len(content) // counters_number
     parts = [content[check_empty_space(content, i):check_empty_space(content, i+increment_value)].strip() for i in range(0, len(content), increment_value)]
+    parts = list(filter(lambda x: x != '', parts))
 
+    if len(parts) > counters_number:
+        parts[-2] += f' {parts[-1]}'
+        parts = parts[:-1]
 
     print(f'Text divided in {len(parts)} parts, sending to counters...')
     global global_count
